@@ -1,4 +1,4 @@
-var app = require('express')();
+const app = require('express')();
 const scraper = require('./routes/scraper');
 const displayer = require('./routes/displayer');
 const course = require('./routes/course');

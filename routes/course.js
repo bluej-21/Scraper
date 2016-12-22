@@ -1,6 +1,6 @@
-var cheerio = require('cheerio');
-var course = require('express').Router();
-var fs = require('fs');
+const cheerio = require('cheerio');
+const course = require('express').Router();
+const fs = require('fs');
 
 course.get('/:courseId', function(req, res) {
 

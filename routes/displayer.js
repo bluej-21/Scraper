@@ -1,6 +1,6 @@
-var cheerio = require('cheerio');
-var displayer = require('express').Router();
-var fs = require('fs');
+const cheerio = require('cheerio');
+const displayer = require('express').Router();
+const fs = require('fs');
 
 displayer.get('/display', function(req, res) {
 

@@ -49,7 +49,7 @@ scraper.get('/scrape', function(req, res) {
             console.log('File successfully written!');
         })
         
-        res.send('Check your console!');
+        res.send('File successfully written');
     })
 });
 
