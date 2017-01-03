@@ -45,7 +45,7 @@ scraper.get('/scrape', function(req, res) {
             });
         }
 
-        fs.writeFile('data.json', JSON.stringify(json, null, 4), function(err) {
+        fs.writeFile('./app/data.json', JSON.stringify(json, null, 4), function(err) {
             console.log('File successfully written!');
         })
         

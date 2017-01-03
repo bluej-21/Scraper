@@ -4,8 +4,8 @@ const fs = require('fs');
 
 displayer.get('/display', function(req, res) {
 
-  if(fs.existsSync('data.json')) {
-      const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
+  if(fs.existsSync('./app/data.json')) {
+      const data = JSON.parse(fs.readFileSync('./app/data.json', 'utf-8'));
       res.send(data.courses);
   }
   else {
