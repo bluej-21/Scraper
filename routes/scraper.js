@@ -46,10 +46,13 @@ scraper.get('/scrape', function(req, res) {
         }
 
         fs.writeFile('./app/data.json', JSON.stringify(json, null, 4), function(err) {
-            console.log('File successfully written!');
-        })
-        
-        res.send('File successfully written');
+            if(err) {
+                res.send('File writing was unsuccessful');
+            }
+            else {
+                res.send('File was successfully written');
+            }
+        })        
     })
 });
 

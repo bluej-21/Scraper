@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="scraperApp">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Scraper</title>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="app.css"/>
         <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="app.module.js"></script>
         <script src="course-list/course-list.module.js"></script>
         <script src="course-list/course-list.component.js"></script>
+        <base href="/">
     </head>
-    <body>
-        <course-list></course-list>
+    <body ng-app="scraperApp">
+    
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand">Scraper</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="scrape">Scrape</a></li>
+            </ul>
+        </nav>
+    
+        <div ui-view></div>
     </body>
   </html>

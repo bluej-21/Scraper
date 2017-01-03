@@ -12,9 +12,9 @@
       <!--Body content-->
 
       <ul class="courses">
-        <li ng-repeat="course in $ctrl.courses | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+        <li ng-repeat="course in $ctrl.courses | filter:$ctrl.query | orderBy:$ctrl.orderProp(course)">
           <span>{{course.name}}</span>
-          <p>{{course.prereq}}</p>
+          <p>Prerequisties: {{course.prereq}}</p>
         </li>
       </ul>
 
