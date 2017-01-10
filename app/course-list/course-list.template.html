@@ -4,15 +4,30 @@
       <!--Sidebar content-->
       <p>
         Search:
-        <input ng-model="$ctrl.query" />
+        <input ng-model="$ctrl.query.name" />
       </p>
        
     </div>
+
+    <div class="pull-right">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary btn-filter" ng-click="$ctrl.setFlag(1)">
+            Lower Div
+        </button>
+        <button type="button" class="btn btn-success btn-filter" ng-click="$ctrl.setFlag(2)">
+            Upper Div
+        </button>
+        <button type="button" class="btn btn-info btn-filter" ng-click="$ctrl.setFlag(3)">
+            Graduate
+        </button>
+      </div>
+		</div>
+
     <div class="col-md-10">
       <!--Body content-->
 
       <ul class="courses">
-        <li ng-repeat="course in $ctrl.courses | filter:$ctrl.query | orderBy:$ctrl.orderProp(course)">
+        <li ng-repeat="course in $ctrl.courses | filter:$ctrl.query | filter:$ctrl.filterLevel">
           <span>{{course.name}}</span>
           <p>Prerequisties: {{course.prereq}}</p>
         </li>

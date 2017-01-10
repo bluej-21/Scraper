@@ -5,8 +5,6 @@ scraperApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
     $urlRouterProvider.otherwise('/');
     
     $stateProvider
-        
-        // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/',
             template: '<course-list></course-list>'
@@ -16,15 +14,22 @@ scraperApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
             url: '/scrape',
             controller: function($scope, $http) {
                 $http.get('http://localhost:8081/scrape')
-                    .then(function(data){
-                        $scope.message = data.data;
+                    .then(function(response){
+                        $scope.message = response.data;
                 });
             },
             template: '<span>{{message}}</span>'
         })
 
         .state('courseId', {
-            url: '/:courseId'
+            url: '/:courseId',
+            controller: function($scope, $http) {
+                $http.get('http://localhost:8081/:courseId')
+                     .then(function(response) {
+                         $scope.message = response.data;
+                     })
+            },
+            template: '<span>{{message}}</span>'
         })
     
     $locationProvider.html5Mode(true);

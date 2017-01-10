@@ -1,9 +1,9 @@
 {
-  "name": "node-web-scrape",
+  "name": "scraper",
   "version": "0.0.1",
-  "description": "Scrape le web.",
+  "description": "Scrape the web.",
   "main": "server.js",
-  "author": "Scotch",
+  "author": "blueJ",
   "dependencies": {
     "bower": "^1.8.0",
     "cheerio": "latest",
